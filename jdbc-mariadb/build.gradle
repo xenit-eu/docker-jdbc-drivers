@@ -1,0 +1,46 @@
+plugins {
+   id "eu.xenit.docker" version "4.0.3"
+}
+
+ext {
+    mariaDbConnectorVersion = '2.2.5'
+}
+
+dockerFile {
+    dockerFile = file("Dockerfile")
+    dockerBuild {
+        repository = 'xeniteu/jdbc-mariadb'
+        tags = [mariaDbConnectorVersion]
+    }
+}
+
+buildDockerImage {
+    buildArgs = ['MARIADB_JDBC_VERSION': project.mariaDbConnectorVersion]
+}
+
+task testDockerImage {
+   doLast {
+        def container = dockerCompose.servicesInfos.get('jdbc-driver').firstContainer
+        def exitCode = container.inspection.State.ExitCode
+        if (exitCode != 0) {
+            throw new GradleException("Docker Image validation failed!")
+        }
+   }
+}
+
+dockerCompose {
+    captureContainersOutput = true
+    useComposeFiles = ['docker-compose.goss.yml']
+    isRequiredBy(testDockerImage)   
+}
+
+docker {
+    if(project.hasProperty('DOCKER_USER') && project.hasProperty('DOCKER_PASSWORD')) {
+        registryCredentials {
+            username = project.DOCKER_USER
+            username = project.DOCKER_PASSWORD
+        }
+    } else {
+        println "using default credentials"
+    }
+}

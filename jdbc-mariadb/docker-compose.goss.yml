@@ -1,0 +1,20 @@
+version: '2.1'
+
+services:
+  goss:
+    image: aelsabbahy/goss
+    command: goss --version
+    volumes:
+      - goss:/goss
+
+  jdbc-driver:
+    image: ${DOCKER_IMAGE:-xeniteu/jdbc-mariadb:local}
+    command: ./goss-validate.sh
+    volumes:
+      - goss:/goss
+      - ./goss.yaml:/goss.yaml:z
+      - ./goss-validate.sh:/goss-validate.sh:z
+      - ./build/goss/:/goss-results/:z
+
+volumes:
+  goss:

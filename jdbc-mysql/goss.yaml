@@ -1,0 +1,15 @@
+file:
+  /jdbc:
+    exists: true
+    owner: root
+    group: root
+    mode: "0755" # rwxr-xr-x
+  /jdbc/mysql-connector-java-5.1.42.jar:
+    exists: true
+    owner: root
+    group: root
+    filetype: file
+    md5: 803783e5c40c911c92d4b6b5ea324912
+    # sha1 - not supported by goss
+    # sha1: 80a448a3ec2178b649bb2e3cb3610fab06e11669
+    # sha256 - could not find published sha256
