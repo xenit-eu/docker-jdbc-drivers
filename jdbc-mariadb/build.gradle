@@ -9,7 +9,7 @@ ext {
 dockerFile {
     dockerFile = file("Dockerfile")
     dockerBuild {
-        repository = 'xeniteu/jdbc-mariadb'
+        repository = 'xenit/jdbc-mariadb'
         tags = [mariaDbConnectorVersion]
     }
 }

@@ -9,8 +9,8 @@ This project builds docker images with JDBC drivers.
 
 When the master branch is built on Jenkins, 
 the resulting images are published to Docker Hub under the following image names:  
-* [xeniteu/jdbc-mysql](https://hub.docker.com/r/xeniteu/jdbc-mysql)  
-* [xeniteu/jdbc-mariadb](https://hub.docker.com/r/xeniteu/jdbc-mariadb)    
+* [xenit/jdbc-mysql](https://hub.docker.com/r/xenit/jdbc-mysql)  
+* [xenit/jdbc-mariadb](https://hub.docker.com/r/xenit/jdbc-mariadb)    
 
 Building locally produces images with the same name on your system but does not push them. 
 You can do this with the `./gradlew buildDockerImage` task.
@@ -43,7 +43,7 @@ services:
     - MYSQL_DATABASE=alfresco
 
   jdbc-driver:
-    image: xeniteu/jdbc-mariadb:2.2.5
+    image: xenit/jdbc-mariadb:2.2.5
     volumes:
     - jdbc:/jdbc/
 
