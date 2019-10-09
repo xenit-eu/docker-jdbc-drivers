@@ -9,7 +9,7 @@ ext {
 dockerFile {
     dockerFile = file("Dockerfile")
     dockerBuild {
-        repository = 'xeniteu/jdbc-mysql'
+        repository = 'xenit/jdbc-mysql'
         tags = [mysqlConnectorVersion]
     }
 }

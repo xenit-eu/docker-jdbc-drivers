@@ -8,7 +8,7 @@ services:
       - goss:/goss
 
   jdbc-driver:
-    image: ${DOCKER_IMAGE:-xeniteu/jdbc-mysql:local}
+    image: ${DOCKER_IMAGE:-xenit/jdbc-mysql:local}
     command: ./goss-validate.sh
     volumes:
       - goss:/goss
