@@ -1,5 +1,1 @@
-version '0.0.1'
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.5'
-}
+version '0.0.2'
