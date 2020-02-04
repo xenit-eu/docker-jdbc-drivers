@@ -1,6 +1,6 @@
 plugins {
-    id "eu.xenit.docker" version "5.0.0"
-    id "eu.xenit.docker-compose" version "5.0.0"
+    id "eu.xenit.docker" version "5.0.1"
+    id "eu.xenit.docker-compose" version "5.0.1"
 }
 ext {
     mariaDbConnectorVersion = '2.2.5'
