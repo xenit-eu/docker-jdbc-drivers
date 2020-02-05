@@ -3,7 +3,7 @@
 [![Build Status](https://jenkins-2.xenit.eu/buildStatus/icon?job=Xenit+Github%2Fdocker-jdbc-drivers%2Fmaster)](https://jenkins-2.xenit.eu/job/Xenit%20Github/job/docker-jdbc-drivers/job/master/)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-This project builds docker images with JDBC drivers.
+Docker image with JDBC drivers, so you can switch to an alternative JDBC driver at runtime.
 
 ## Building and resulting images
 
