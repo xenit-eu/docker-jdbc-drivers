@@ -4,9 +4,9 @@ file:
     owner: root
     group: root
     mode: "0755" # rwxr-xr-x
-  /jdbc/mariadb-java-client-2.2.5.jar:
+  /jdbc/mariadb-java-client-3.1.2.jar:
     exists: true
     owner: root
     group: root
     filetype: file
-    md5: 5362a4c67b32924cb447b29fb478d94b
+    md5: f868788181808a4a6b4bac5aba74632b

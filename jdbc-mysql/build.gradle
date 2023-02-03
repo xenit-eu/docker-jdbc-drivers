@@ -1,10 +1,10 @@
 plugins {
-    id "eu.xenit.docker" version "5.0.1"
-    id "eu.xenit.docker-compose" version "5.0.1"
+    id "eu.xenit.docker" version "5.3.2"
+    id "eu.xenit.docker-compose" version "5.3.2"
 }
 
 ext {
-    mysqlConnectorVersion = '5.1.42'
+    mysqlConnectorVersion = '8.0.32'
 }
 
 dockerFile {
