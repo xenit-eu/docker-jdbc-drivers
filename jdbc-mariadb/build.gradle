@@ -35,12 +35,12 @@ dockerCompose {
 }
 
 docker {
-    if(project.hasProperty('DOCKER_USER') && project.hasProperty('DOCKER_PASSWORD')) {
+    if (System.getenv("DOCKER_USER") != null) {
         registryCredentials {
-            username = project.DOCKER_USER
-            password = project.DOCKER_PASSWORD
+            username = System.getenv("DOCKER_USER")
+            password = System.getenv("DOCKER_PASSWORD")
         }
     } else {
-        println "using default credentials"
+        logger.debug "using default credentials"
     }
 }
